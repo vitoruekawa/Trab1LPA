@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> 
 void swap(int *vet, int valor1, int valor2){	//funcao utilizada em conjunto com a funcao quickSort para realizar a ordenacao dos elementos de um vetor
     int trocador;
 	trocador = vet[valor1];
@@ -28,27 +28,27 @@ void quickSort (int *v,int a, int b){ 		//funcao utilizada para realizar a orden
 
 int main(){
 	int n, i, j, temp;
-	int *valores = (int*)malloc(n*sizeof(int));			//criacao de um vetor dinamico de tamanho n, determinado pelo usu·rio, de tal forma que tal vetor n„o seja exageradamente menor nem maior que o necess·rio.
+	int *valores = (int*)malloc(n*sizeof(int));			//criacao de um vetor dinamico de tamanho n, determinado pelo usu√°rio, de tal forma que tal vetor n√£o seja exageradamente menor nem maior que o necess√°rio.
 	printf("Digite a quantidade de numeros n para que o programa identifique o par com menor diferenca\n");
 	scanf("%d", &n);
-	if(n<=2){			//como o objetivo do programa È determinar o menor PAR, È necess·rio que haja pelo menos 2 valores, essa parte do corpo do programa realiza a verificaÁ„o de que o usu·rio entrar· com pelo menos 2 valores.
+	if(n<=2){			//como o objetivo do programa √© determinar o menor PAR, √© necess√°rio que haja pelo menos 2 valores, essa parte do corpo do programa realiza a verifica√ß√£o de que o usu√°rio entrar√° com pelo menos 2 valores.
 		printf("Por favor, eh necessario que haja pelo menos um par, portanto, deve haver no minimo dois valores\nDigite um valor maior ou igual a dois:");
 		scanf("%d", &n);
 	}
 	printf("Digite os numeros \n");
-	for(i=0;i<n;i++){	//utilizaÁ„o de um comando repetitivo para atribuir os valores digitados pelo usu·rio ‡s posiÁıes do vetor.
+	for(i=0;i<n;i++){	//utiliza√ß√£o de um comando repetitivo para atribuir os valores digitados pelo usu√°rio √†s posi√ß√µes do vetor.
 		scanf("%d", &valores[i]);
 	}
-	quickSort(valores, 0, n-1); //chamada da funÁ„o quickSort para ordenar o vetor valores
+	quickSort(valores, 0, n-1); //chamada da fun√ß√£o quickSort para ordenar o vetor valores
 	j = valores[1]-valores[0];
 	for(i=0;i<n-1;i++){
-		if(valores[i+1]-valores[i]<j){	//como o vetor valores est· ordenado, com certeza, a menor diferenÁa estar· entre posiÁıes consecutivas do vetor.
-		j = valores[i+1]-valores[i];	//com essa parte do corpo, encontra-se a menor diferenÁa e a posiÁ„o dos valores(i e i+1).
+		if(valores[i+1]-valores[i]<j){	//como o vetor valores est√° ordenado, com certeza, a menor diferen√ßa estar√° entre posi√ß√µes consecutivas do vetor.
+		j = valores[i+1]-valores[i];	//com essa parte do corpo, encontra-se a menor diferen√ßa e a posi√ß√£o dos valores(i e i+1).
 		temp = i;
 		}
 	}
-	printf("Os valores com menor diferenca sao: %d e %d \n", valores[temp], valores[temp+1]); //fim do programa: retorno dos valores digitados cuja diferenca seja mÌnima.
-	free(valores); 		//liberaÁ„o de memÛria alocada pelo comando malloc
+	printf("Os valores com menor diferenca sao: %d e %d \n", valores[temp], valores[temp+1]); //fim do programa: retorno dos valores digitados cuja diferenca seja m√≠nima.
+	free(valores); 		//libera√ß√£o de mem√≥ria alocada pelo comando malloc
 	system("pause");
 	return 0;
 }
