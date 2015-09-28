@@ -2,12 +2,12 @@
 #include<stdlib.h>
 void swap(int *vet, int valor1, int valor2){   //funcao utilizada em conjunto com a funcao quicksort para ordenar os elementos de um vetor
     int trocador;
-	trocador = vet[valor1];
+	trocador = vet[valor1]; 
     vet[valor1] = vet[valor2];
     vet[valor2] = trocador;
 }
 
-void quickSort (int *v,int a, int b){			//funÁ„o utilizada para ordenar os elementos de um vetor
+void quickSort (int *v,int a, int b){			//fun√ß√£o utilizada para ordenar os elementos de um vetor
     if(a>=b)
         return;
     int p=rand()%(b-a+1)+a;
@@ -34,11 +34,11 @@ void quickSort (int *v,int a, int b){			//funÁ„o utilizada para ordenar os eleme
 int main(){
 	int i, n, maior, maiorFreq1 = 0, maiorFreq2 = 0, count;
 	int j = 0;
-	int *valores = (int*)malloc(n*sizeof(int));				//criaÁ„o de um vetor din‚mico de tamanho n, escolhido pelo usu·rio
-	printf("O programa retornar· o valor de maior frequencia(moda) \nDigite o numero de valores a serem analisados pelo programa.\n");
-	scanf("%d", &n);					//determinaÁ„o do tamanho n do vetor din‚mico
+	int *valores = (int*)malloc(n*sizeof(int));				//cria√ß√£o de um vetor din√¢mico de tamanho n, escolhido pelo usu√°rio
+	printf("O programa retornar√° o valor de maior frequencia(moda) \nDigite o numero de valores a serem analisados pelo programa.\n");
+	scanf("%d", &n);					//determina√ß√£o do tamanho n do vetor din√¢mico
 	if(n<1){		
-	//verificaÁ„o de que mais de um n˙mero ser· digitado pelo usu·rio
+	//verifica√ß√£o de que mais de um n√∫mero ser√° digitado pelo usu√°rio
 		printf("Por favor, o programa identifica o valor de maior frequencia, e portanto, e necessario entrar com pelo menos um valor.\n ");
 		scanf("%d", &n);
 	}
@@ -46,10 +46,10 @@ int main(){
 	for(i=0;i<n;i++){
 		scanf("%d", &valores[i]);
 	}
-	quickSort(valores, 0, n-1);			//chamada da funÁ„o quickSort para realizar a ordenaÁ„o do vetor valores.
+	quickSort(valores, 0, n-1);			//chamada da fun√ß√£o quickSort para realizar a ordena√ß√£o do vetor valores.
 	for(i=0;i<n;i++){
 		j = i;
-		count = 0;								//comando repetitivo utilizado para encontrar o valor que ocorre com maior frequencia, atribuindo a frequencia ‡ vari·vel maiorFreq1
+		count = 0;								//comando repetitivo utilizado para encontrar o valor que ocorre com maior frequencia, atribuindo a frequencia √† vari√°vel maiorFreq1
 		while(valores[j] == valores[i] && j<n){
 			count++;
 			if(count>maiorFreq1){
@@ -63,8 +63,8 @@ int main(){
 		printf("Nao existem valores que se repetem \n");
 	}
 	if(maiorFreq1!=1){
-		for(i=0;i<n;i++){			//caso existam valores repetidos, esse comando repetitivo verifica qual È o valor que mais se repete e o imprime.
-			j = i;					//para identificar qual valor mais se repete, faz-se uma nova contagem, a variavel valores[j] que possuir contagem igual a maiorFreq1 È aquele que possui maior frequencia
+		for(i=0;i<n;i++){			//caso existam valores repetidos, esse comando repetitivo verifica qual √© o valor que mais se repete e o imprime.
+			j = i;					//para identificar qual valor mais se repete, faz-se uma nova contagem, a variavel valores[j] que possuir contagem igual a maiorFreq1 √© aquele que possui maior frequencia
 			count = 0;
 			while(valores[j] == valores[i] && j<n){
 				count++;
@@ -79,7 +79,7 @@ int main(){
 			i=j-1;
 		}
 	}
-	free(valores);			//comando utilizado para liberar memÛria alocada pelo comando malloc.
+	free(valores);			//comando utilizado para liberar mem√≥ria alocada pelo comando malloc.
 	system("pause");
 	return 0;
 }
