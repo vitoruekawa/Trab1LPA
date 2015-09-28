@@ -1,4 +1,4 @@
-----------------------------------------------------LEIA-ME--------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------LEIA-ME-------------------------------------------------------------------------------------------------------------------------------------- 
 Os programas elaborados correspondem a um trabalho para a disciplina SSC0300 - Linguagens de Programação e Aplicações, ministrada
 ao curso de Engenharia Mecânica pelo professor Adenilso Simão do Instituto de Ciências Matemáticas e Computação(ICMC - USP).
 
