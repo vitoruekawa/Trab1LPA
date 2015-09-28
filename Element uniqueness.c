@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-void swap(int *vet, int valor1, int valor2){		//função utilizada em conjunto com a função quickSort para a ordenação dos valores de um vetor
+void swap(int *vet, int valor1, int valor2){		//funÃ§Ã£o utilizada em conjunto com a funÃ§Ã£o quickSort para a ordenaÃ§Ã£o dos valores de um vetor
     int trocador;
 	trocador = vet[valor1];
     vet[valor1] = vet[valor2];
     vet[valor2] = trocador;
 }
-void quickSort (int *v,int a, int b){		//função utilizada para ordenar os valores de um vetor.
+void quickSort (int *v,int a, int b){		//funÃ§Ã£o utilizada para ordenar os valores de um vetor.
     if(a>=b)
         return;
     int p=rand()%(b-a+1)+a;
@@ -32,18 +32,18 @@ void quickSort (int *v,int a, int b){		//função utilizada para ordenar os valore
 
 int main(){
 	int i, j, n;
-	int *valores = (int*)malloc(n*sizeof(int));		//criação de um vetor dinâmico com dimensão n, determinada pelo usuário, de tal forma que o tamanho do vetor seja ideal.
+	int *valores = (int*)malloc(n*sizeof(int));		//criaÃ§Ã£o de um vetor dinÃ¢mico com dimensÃ£o n, determinada pelo usuÃ¡rio, de tal forma que o tamanho do vetor seja ideal.
 	printf("Digite o numero de valores para que o programa te indique aqueles que nao se repetem: \n");
-	scanf("%d", &n);		//leitura do tamanho n digitado pelo usuário
-	if(n == 0){
-		printf("Voce deve entrar com pelo menos um valor\nDigite um valor diferente de zero\n");		//verificação da entrada: para que haja algum elemento único, é necessário que o usuário entre com pelo menos 1 valor, ou seja, n!=0.
+	scanf("%d", &n);		//leitura do tamanho n digitado pelo usuÃ¡rio
+	if(n < 1){
+		printf("Voce deve entrar com pelo menos um valor\nDigite um valor maior que 1\n");		//verificaÃ§Ã£o da entrada: para que haja algum elemento Ãºnico, Ã© necessÃ¡rio que o usuÃ¡rio entre com pelo menos 1 valor, ou seja, n>=1.
 		scanf("%d", &n);
 	}
 	printf("Entre com os valores \n");
-	for(i=0;i<n;i++){				//uso de um comando repetitivo para atribuir os valores digitados pelo usuário às posições do vetor valores.
+	for(i=0;i<n;i++){				//uso de um comando repetitivo para atribuir os valores digitados pelo usuÃ¡rio Ã s posiÃ§Ãµes do vetor valores.
 		scanf("%d", &valores[i]);
 	}
-	quickSort(valores, 0, n-1);		//ordenação do vetor valores.
+	quickSort(valores, 0, n-1);		//ordenaÃ§Ã£o do vetor valores.
 	printf("O(s) valor(es) que ocorre(m) uma unica vez sao:\n");
 	if(n!=1){
 		if(valores[1]-valores[0] != 0){
@@ -59,10 +59,10 @@ int main(){
 		}else{
 			printf("Nao existem valores que nao se repetem \n");
 		}
-	}else{			//se n=1, então existe um único valor, esse valor não se repete e portanto o retorno do programa é esse valor.
+	}else{			//se n=1, entÃ£o existe um Ãºnico valor, esse valor nÃ£o se repete e portanto o retorno do programa Ã© esse valor.
 		printf("%d\n", valores[0]);
 	}
-	free(valores);		//liberação da memória alocada pelo comando malloc.
+	free(valores);		//liberaÃ§Ã£o da memÃ³ria alocada pelo comando malloc.
 	system("pause");
 	return 0;
 }
