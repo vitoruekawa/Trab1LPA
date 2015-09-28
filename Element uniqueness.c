@@ -20,7 +20,7 @@ void quickSort (int *v,int a, int b){		//função utilizada para ordenar os valo
     	}
         while (v[n]>v[p]){
             n--;
-    	}
+    	} 
         if (n>m){
             swap(v,m,n);
         }
